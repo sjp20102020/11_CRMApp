@@ -1,0 +1,56 @@
+tutorial 5 - done -source done
+tutorial 6 - done- source due 
+tutorial 7 - done- source due 
+tutorial 8 - done- source due --angular started  ngboilerplate/ui-router,grunt,
+tutorial 9 - done- source due - 
+tutorial 10 - done- source due  -
+tutorial 11 - done- source due  -
+ Tutorial 12 -half done 38min/47min done
+
+
+https://www.youtube.com/watch?v=P2WuSmBEClw  10min done
+
+
+ngboilerplate(Angularjs framework) - project structure
+grunt: task manager(like ant) -grunt file is a configuration of grunt build system 
+bwoer-package manager - like maven
+
+node.js - both grunt and bower runs on node.js
+
+
+
+unit test:
+For Unit tests I like JsTestDriver(http://code.google.com/p/js-test-driver/) + Jasmine (http://github.com/pivotal/jasmine) + JSTD Adapter(http://github.com/mhevery/jasmine-jstd-adapter)
+
+
+URL -- Localhost:
+http://localhost:8080/BCSWeb/app/index.html#/home
+
+ng-boilerplate 
+C:\SW_Tec\Pro\ProTest01\ngBoilerPlateEx\ngbp
+
+====how to compile=======
+go to,app folder in cmd
+C:\BCSWeb\BCSWeb\src\main\webapp\app
+
+grunt watch
+
+====how to install grunt and karma======
+go to,app folder in cmd
+C:\BCSWeb\BCSWeb\src\main\webapp\app
+> npm install
+
+Note: this will create node_modules folder. (inside grunt, karma, jasmine will be installed)
+
+
+
+
+
+Note: when ever we do any js/html/css changes it will compile it into build folder
+
+=====problem with npm install=====
+this create a folder called -->node_modules
+This folder has long paths..
+after this only  ::: grunt watch (works for karma)
+https://github.com/npm/npm/issues/3697
+

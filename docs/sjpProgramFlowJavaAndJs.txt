@@ -1,0 +1,180 @@
+https://spring.io/understanding/HATEOAS
+
+
+{"accounts":[
+{"name":"sjp","rid":1,"links":[{"rel":"self","href":"http://localhost:8080/BCSWeb/rest/accounts/1"},{"rel":"blogs","href":"http://localhost:8080/BCSWeb/rest/accounts/1/blogs"}]}],"links":[]}
+
+
+
+A1)add one blog(sjpblog1)
+========================
+req:
+http://localhost:8080/BCSWeb/rest/accounts/1/blogs
+res:
+{"blogs":[{"title":"sjpblog1","rid":1,"links":[{"rel":"self","href":"http://localhost:8080/BCSWeb/rest/blogs/1"},{"rel":"entries","href":"http://localhost:8080/BCSWeb/rest/blogs/1/blog-entries"},{"rel":"owner","href":"http://localhost:8080/BCSWeb/rest/accounts/1"}]}],"links":[]}
+
+A2)add 2nd blog(sjpblog2)
+req: http://localhost:8080/BCSWeb/rest/accounts/1/blogs
+
+{
+	"blogs": [{
+		"title": "sjpblog1",
+		"rid": 1,
+		"links": [{
+			"rel": "self",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/1"
+		},
+		{
+			"rel": "entries",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/1/blog-entries"
+		},
+		{
+			"rel": "owner",
+			"href": "http://localhost:8080/BCSWeb/rest/accounts/1"
+		}]
+	},
+	{
+		"title": "sjpblog2",
+		"rid": 2,
+		"links": [{
+			"rel": "self",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/2"
+		},
+		{
+			"rel": "entries",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/2/blog-entries"
+		},
+		{
+			"rel": "owner",
+			"href": "http://localhost:8080/BCSWeb/rest/accounts/1"
+		}]
+	}],
+	"links": []
+}
+
+
+
+A3)add 3rd blog(sjpblog3)
+{
+	"blogs": [{
+		"title": "sjpblog1",
+		"rid": 1,
+		"links": [{
+			"rel": "self",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/1"
+		},
+		{
+			"rel": "entries",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/1/blog-entries"
+		},
+		{
+			"rel": "owner",
+			"href": "http://localhost:8080/BCSWeb/rest/accounts/1"
+		}]
+	},
+	{
+		"title": "sjpblog2",
+		"rid": 2,
+		"links": [{
+			"rel": "self",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/2"
+		},
+		{
+			"rel": "entries",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/2/blog-entries"
+		},
+		{
+			"rel": "owner",
+			"href": "http://localhost:8080/BCSWeb/rest/accounts/1"
+		}]
+	},
+	{
+		"title": "sjpblog3",
+		"rid": 3,
+		"links": [{
+			"rel": "self",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/3"
+		},
+		{
+			"rel": "entries",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/3/blog-entries"
+		},
+		{
+			"rel": "owner",
+			"href": "http://localhost:8080/BCSWeb/rest/accounts/1"
+		}]
+	}],
+	"links": []
+}
+
+
+A4) cr 1st blog
+===============
+{
+	"blogs": [{
+		"title": "crblog1",
+		"rid": 4,
+		"links": [{
+			"rel": "self",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/4"
+		},
+		{
+			"rel": "entries",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/4/blog-entries"
+		},
+		{
+			"rel": "owner",
+			"href": "http://localhost:8080/BCSWeb/rest/accounts/2"
+		}]
+	}],
+	"links": []
+}
+
+
+A5 cr 2nd blogs
+===============
+{
+	"blogs": [{
+		"title": "crblog1",
+		"rid": 4,
+		"links": [{
+			"rel": "self",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/4"
+		},
+		{
+			"rel": "entries",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/4/blog-entries"
+		},
+		{
+			"rel": "owner",
+			"href": "http://localhost:8080/BCSWeb/rest/accounts/2"
+		}]
+	},
+	{
+		"title": "crblog2",
+		"rid": 5,
+		"links": [{
+			"rel": "self",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/5"
+		},
+		{
+			"rel": "entries",
+			"href": "http://localhost:8080/BCSWeb/rest/blogs/5/blog-entries"
+		},
+		{
+			"rel": "owner",
+			"href": "http://localhost:8080/BCSWeb/rest/accounts/2"
+		}]
+	}],
+	"links": []
+} 
+
+
+org.springframework.hateoas
+public class ResourceSupport implements Identifiable<Link> {
+
+
+
+
+package org.springframework.http;
+public class ResponseEntity<T> extends HttpEntity<T> {

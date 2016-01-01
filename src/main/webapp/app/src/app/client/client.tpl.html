@@ -1,0 +1,30 @@
+<div>
+	<form ng-submit="client_submit()">
+		<h1>Clent Registration Form</h1>
+		<h2>Patient Details</h2>
+		<table border="2">
+			<tr>
+				<td>First name</td>
+				<td><input type="text" name="firstName"
+					ng-model="myForm.firstName" ng-minlength="5" ng-maxlength="12">
+				</td>
+			</tr>
+			<tr>
+				<td>Last name</td>
+				<td><input type="text" name="lastName"
+					ng-model="myForm.lastName"></td>
+			</tr>
+			</br>
+			</br>
+
+
+			<tr>
+				<td>
+					<button class="btn btn-success" type="submit">Submit</button>
+				</td>
+			</tr>
+		</table>
+
+		<div>{{myForm.firstName}}</div>
+		<div>{{myForm.lastName}}</div>
+</div>

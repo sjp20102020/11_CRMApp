@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1> Sadasarana Workforce Management System.</h1>
+
+  <p class="lead">
+  Gavin & Joanne Ltd.
+  </p>
+
+ 
+  <div class="btn-group" ng-hide="isLoggedIn()">
+    <a ui-sref="login" class="btn btn-large btn-default">
+      Login
+    </a>
+    <a ui-sref="register" class="btn btn-large btn-success">
+      Register
+    </a>
+  </div>
+
+    <div class="btn-group" ng-show="isLoggedIn()">
+        <a ng-click="logout()" class="btn btn-large btn-default">
+            Logout
+        </a>
+    </div>
+
+
+</div>
+</div>
+
